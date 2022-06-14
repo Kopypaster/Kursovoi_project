@@ -1,0 +1,21 @@
+Вводить так:
+./tbdb.sh DBFile [modifers] [command] [parameters]
+
+Команда select
+1) Выборка по номерам строк
+./tbdb.sh DBFile select 1,3,5 line 2
+Выведет все значения в столбцах номер 1, 3 и 5 во второй строке.
+2) Выборка по содержимому
+./tbdb.sh DBFile select 1,3,5 where 3=text
+Выведет все значения в столбцах номер 1, 3 и 5 в строках, где третья ячейка содержит «text»
+
+Команда insert
+./tbdb.sh DBFile insert field1 field2 field3
+Добавит в файл DBFile строку с тремя ячейками, заполнит их как field1, field2, field3.
+
+Команда delete
+./tbdb.sh DBFile delete line 2
+Удалит вторую строку.
+
+"-n" — выдает перед каждой строкой номер строки в базе.
+"-b" — заставляет работать базу c base64 данными.
